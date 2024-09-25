@@ -1,32 +1,27 @@
-import ITaskModel from "../models/Task.js";
-import { locationObj } from "../index.js";
+import showHomePage from "./TaskListPage.js";
+import { Task, tasks, saveTasksToLocalStorage } from "../utils/storage.js";
 
-export class Task implements ITaskModel {
-    name: string;
-    description: string;
-    date: Date;
-    id: number;
-    status: boolean;
-    constructor(name:string, description: string, date: Date, id: number, status: boolean) {
-        this.name = name;
-        this.description = description;
-        this.date = date;
-        this.id = id;
-        this.status = status;
-    }
-    
-}
 export function createNewTaskPage() {
     window.location.hash = '#createTaskPage';
-    locationObj.location = "createTaskPage";
 
     const toDoContainer = (document.getElementById("to-do-container") as HTMLElement);
 
     const createNewTaskPage = (document.createElement("div") as HTMLElement);
     createNewTaskPage.id = ("createNewTaskPage");
 
-    const formCreateNewTask = document.createElement("div");
+    const formCreateNewTask = document.createElement("form");
     formCreateNewTask.id = ("containerCreateNewTask");
+    formCreateNewTask.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const taskName: string = (document.getElementById("inputNameNewTask") as HTMLInputElement).value;
+        const taskDescription: string = (document.getElementById("inputDescriptionNewTask") as HTMLTextAreaElement).value;
+
+        if(taskName.trim() !== "") {
+            createNewTask(taskName, taskDescription, new Date, tasks.length, false);
+            showHomePage();
+        }
+    });
 
     const labelNameNewTask = document.createElement("label");
     labelNameNewTask.htmlFor = "inputNameNewTask";
@@ -37,30 +32,46 @@ export function createNewTaskPage() {
     inputNameNewTask.id = "inputNameNewTask";
     inputNameNewTask.classList.add("inputNewTask");
     inputNameNewTask.placeholder = "Nome da Tarefa";
+    inputNameNewTask.minLength = 2;
+    inputNameNewTask.maxLength = 35;
+    inputNameNewTask.required = true;
 
     const labelDescriptionNewTask = document.createElement("label");
     labelDescriptionNewTask.htmlFor = "inputDescriptionNewTask";
     labelDescriptionNewTask.classList.add("labelNewTask");
     labelDescriptionNewTask.innerHTML = "Descrição:";
 
-    const inputDescriptionNewTask = document.createElement("textArea");
+    const inputDescriptionNewTask = document.createElement("textArea") as HTMLTextAreaElement;
+    inputDescriptionNewTask.placeholder = "Descrição da sua tarefa";
     inputDescriptionNewTask.id = "inputDescriptionNewTask";
     inputDescriptionNewTask.classList.add("inputNewTask");
 
+    const buttonsContainer = document.createElement("div");
+    buttonsContainer.classList.add("buttons-container");
+
     const buttonCreateNewTask = document.createElement("button");
-    buttonCreateNewTask.classList.add("buttonCreateNewTask");
+    buttonCreateNewTask.classList.add("buttonNewTask");
+    buttonCreateNewTask.type = "submit";
+    buttonCreateNewTask.innerHTML = "Criar Tarefa";
 
-    formCreateNewTask.appendChild(labelNameNewTask);
-    formCreateNewTask.appendChild(inputNameNewTask);
-    formCreateNewTask.appendChild(labelDescriptionNewTask);
-    formCreateNewTask.appendChild(inputDescriptionNewTask);
-    formCreateNewTask.appendChild(buttonCreateNewTask);
+    const buttonCancelNewTask = document.createElement("button");
+    buttonCancelNewTask.classList.add("buttonNewTask");
+    buttonCancelNewTask.type = "button";
+    buttonCancelNewTask.innerHTML = "Cancelar";
+    buttonCancelNewTask.addEventListener("click", () => {
+        showHomePage();
+    })
 
-    createNewTaskPage.appendChild(formCreateNewTask);
-    createNewTaskPage.appendChild(buttonCreateNewTask);
+    buttonsContainer.append(buttonCreateNewTask, buttonCancelNewTask)
+    
+    formCreateNewTask.append(labelNameNewTask, inputNameNewTask, labelDescriptionNewTask, inputDescriptionNewTask, buttonsContainer);
 
-    toDoContainer.appendChild(createNewTaskPage);
+    createNewTaskPage.append(formCreateNewTask);
+    toDoContainer.append(createNewTaskPage);
 }
 function createNewTask(name:string, description: string, date: Date, id: number, status: boolean){
-    
+    const newTask = new Task(name, description, date, id, status);
+    tasks.push(newTask);
+    saveTasksToLocalStorage();
+    console.log('todas as tasks:', tasks);
 }

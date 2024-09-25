@@ -79,7 +79,8 @@
     background-color: rgb(54, 95, 185);
 }
 #createNewTaskPage {
-
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 60px;
     width: 90%;
     height: 80%;
@@ -88,36 +89,53 @@
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.4));;
 }
 #containerCreateNewTask {
-    margin: 20px;
-    height: 50%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.labelNewTask {
-    margin: 0;
-    width: 20%;
+    flex-direction: column;
+    margin: 20px;
+    width: 100%;
+    height: 90%;
 
 }
-.labelNewTask:nth-child(3) {
-    flex-basis: 87%;
+.labelNewTask {
+    display: block;
+    margin: 20px 0px 5px 0px;
 }
+
 .inputNewTask {
+    display: block;
+    padding: 5px;
     margin: 0;
-    width: 65%;
+    width: 100%;
     height: 25px;
     background-color: aliceblue;
     border: 1px solid black;
     border-radius: 3px;
 }
-.inputNewTask:nth-last-child(1) {
-    height: 200px;
-    width: 87%;
+.inputNewTask:nth-last-child(2) {
+    resize: none;
+    height: 300px;
     text-align: justify;
 }
-.buttonCreateNewTask {
-    flex-basis: 87%;
+.buttons-container {
+    position: relative;
+    bottom: 10px;
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.buttonNewTask {
+    width: 120px;
+    font-size: medium;
+    background-color: #295F98;
+    border: none;
+    color: aliceblue;
+    border-radius: 50px;
+    height: 60px;
+    cursor: pointer;
+    left: 0px;
+}
+.buttonNewTask:nth-child(2) {
 
+    background-color: #A04747;
 }

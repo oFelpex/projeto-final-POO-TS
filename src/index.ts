@@ -1,27 +1,8 @@
-import { createNewTaskPage } from "./pages/CreateTaskPage.js";
-export let locationObj = {
-    location: "home"
-}
+import showHomePage from "./pages/TaskListPage.js";
+import { loadTasksFromLocalStorage } from "./utils/storage.js";
 
-    
 
 window.onload = function() {
-    window.location.hash = '#home';
+    showHomePage()
+    loadTasksFromLocalStorage();
 };
-updateTitle(locationObj.location);
-function updateTitle(location: string) {
-    let title = (document.getElementById("navBar_title") as HTMLElement);
-    switch(location) {
-        case "home":
-            title.innerHTML = "Lista de Tarefas"
-            break;
-        case "createTaskPage":
-            title.innerHTML = "Criar nova Tarefa";
-            break;
-    }
-}
-
-(document.getElementById("button-newTask") as HTMLElement).addEventListener("click", () => {
-    createNewTaskPage();
-    updateTitle(locationObj.location);
-});
