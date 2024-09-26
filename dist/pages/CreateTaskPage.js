@@ -1,7 +1,9 @@
 import showHomePage from "./TaskListPage.js";
+import HeaderComponent from "../components/HeaderComponent.component.js";
 import { Task, tasks, saveTasksToLocalStorage } from "../utils/storage.js";
 export function createNewTaskPage() {
     window.location.hash = '#createTaskPage';
+    new HeaderComponent("Criar Tarefas");
     const toDoContainer = document.getElementById("to-do-container");
     toDoContainer.scrollTo({ top: 0, behavior: 'smooth' });
     toDoContainer.style.overflowY = "hidden";
@@ -37,7 +39,7 @@ export function createNewTaskPage() {
     inputDescriptionNewTask.placeholder = "Descrição da sua tarefa";
     inputDescriptionNewTask.id = "inputDescriptionNewTask";
     inputDescriptionNewTask.classList.add("inputNewTask");
-    inputDescriptionNewTask.maxLength = 697;
+    inputDescriptionNewTask.maxLength = 360;
     const buttonsContainer = document.createElement("div");
     buttonsContainer.classList.add("buttons-container");
     const buttonCreateNewTask = document.createElement("button");

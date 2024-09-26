@@ -113,10 +113,11 @@
     padding: 5px;
     margin: 0;
     width: 100%;
-    height: 25px;
+    height: 35px;
     background-color: aliceblue;
     border: 1px solid black;
     border-radius: 3px;
+    font-size: large;
 }
 .inputNewTask:nth-last-child(2) {
     resize: none;
