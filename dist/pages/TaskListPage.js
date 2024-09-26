@@ -5,7 +5,9 @@ import { tasks, loadTasksFromLocalStorage } from "../utils/storage.js";
 export default function showHomePage() {
     window.location.hash = '#home';
     loadTasksFromLocalStorage();
+    // localStorage.clear();
     const toDoContainer = document.getElementById("to-do-container");
+    toDoContainer.style.overflowY = "auto";
     toDoContainer.innerHTML = '';
     const buttonNewTask = document.createElement("button");
     buttonNewTask.type = "button";

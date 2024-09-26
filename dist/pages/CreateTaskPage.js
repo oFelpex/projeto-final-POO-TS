@@ -3,6 +3,8 @@ import { Task, tasks, saveTasksToLocalStorage } from "../utils/storage.js";
 export function createNewTaskPage() {
     window.location.hash = '#createTaskPage';
     const toDoContainer = document.getElementById("to-do-container");
+    toDoContainer.scrollTo({ top: 0, behavior: 'smooth' });
+    toDoContainer.style.overflowY = "hidden";
     const createNewTaskPage = document.createElement("div");
     createNewTaskPage.id = ("createNewTaskPage");
     const formCreateNewTask = document.createElement("form");
@@ -25,7 +27,7 @@ export function createNewTaskPage() {
     inputNameNewTask.classList.add("inputNewTask");
     inputNameNewTask.placeholder = "Nome da Tarefa";
     inputNameNewTask.minLength = 2;
-    inputNameNewTask.maxLength = 35;
+    inputNameNewTask.maxLength = 25;
     inputNameNewTask.required = true;
     const labelDescriptionNewTask = document.createElement("label");
     labelDescriptionNewTask.htmlFor = "inputDescriptionNewTask";
@@ -35,6 +37,7 @@ export function createNewTaskPage() {
     inputDescriptionNewTask.placeholder = "Descrição da sua tarefa";
     inputDescriptionNewTask.id = "inputDescriptionNewTask";
     inputDescriptionNewTask.classList.add("inputNewTask");
+    inputDescriptionNewTask.maxLength = 697;
     const buttonsContainer = document.createElement("div");
     buttonsContainer.classList.add("buttons-container");
     const buttonCreateNewTask = document.createElement("button");
