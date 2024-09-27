@@ -23,7 +23,7 @@ export function createNewTaskPage() {
         const taskDescription: string = (document.getElementById("inputDescriptionNewTask") as HTMLTextAreaElement).value;
 
         if(taskName.trim() !== "") {
-            createNewTask(taskName, taskDescription, new Date, tasks.length, false);
+            createNewTask(taskName, taskDescription, new Date(), tasks.length, false);
             showHomePage();
         }
     });

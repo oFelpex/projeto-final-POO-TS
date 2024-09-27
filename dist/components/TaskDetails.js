@@ -1,5 +1,5 @@
-import { tasks } from "../utils/storage";
-import HeaderComponent from "./HeaderComponent.component";
+import { tasks } from "../utils/storage.js";
+import HeaderComponent from "./HeaderComponent.component.js";
 export default class TaskDetailsComponent {
     constructor(taskId) {
         new HeaderComponent("Detalhes da Tarefa");
@@ -8,6 +8,7 @@ export default class TaskDetailsComponent {
         this.date = tasks[taskId].date;
         this.id = tasks[taskId].id;
         this.status = tasks[taskId].status;
+        window.location.hash = `#details+id=${this.id}`;
         const toDoContainer = document.getElementById("to-do-container");
         if (toDoContainer)
             toDoContainer.innerHTML += this.render();

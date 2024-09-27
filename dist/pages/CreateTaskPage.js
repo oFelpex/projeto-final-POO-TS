@@ -16,7 +16,7 @@ export function createNewTaskPage() {
         const taskName = document.getElementById("inputNameNewTask").value;
         const taskDescription = document.getElementById("inputDescriptionNewTask").value;
         if (taskName.trim() !== "") {
-            createNewTask(taskName, taskDescription, new Date, tasks.length, false);
+            createNewTask(taskName, taskDescription, new Date(), tasks.length, false);
             showHomePage();
         }
     });

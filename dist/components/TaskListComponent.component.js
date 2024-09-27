@@ -1,3 +1,4 @@
+import TaskDetailsComponent from "./TaskDetails.component.js";
 export default class TaskListComponent {
     constructor(task) {
         this.name = task.name;
@@ -5,7 +6,11 @@ export default class TaskListComponent {
         const toDoContainer = document.getElementById("to-do-container");
         if (toDoContainer)
             toDoContainer.innerHTML += this.render();
-        console.log(this.id);
+        document.querySelectorAll(".tasks-name").forEach(element => {
+            element.addEventListener("click", () => {
+                new TaskDetailsComponent(Number(element.id));
+            });
+        });
     }
     render() {
         return `

@@ -14,7 +14,6 @@ export class Task implements ITaskModel {
         this.id = id;
         this.status = status;
     }
-    
 }
 
 export function saveTasksToLocalStorage() {

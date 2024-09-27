@@ -1,5 +1,5 @@
-import { tasks, Task } from "../utils/storage";
-import TaskDetailsComponent from "./TaskDetails";
+import { Task } from "../utils/storage";
+import TaskDetailsComponent  from "./TaskDetails.component.js";
 
 export default class TaskListComponent {
     name: string;
@@ -7,11 +7,15 @@ export default class TaskListComponent {
     constructor(task: Task) {
         this.name = task.name;
         this.id = task.id;
+
         const toDoContainer = document.getElementById("to-do-container");
         if(toDoContainer) toDoContainer.innerHTML += this.render();
-
-
-            console.log(this.id);
+        
+        document.querySelectorAll(".tasks-name").forEach(element => {
+            element.addEventListener("click", () => {
+                new TaskDetailsComponent(Number(element.id));
+            })
+        })
 
     }
     render() {
