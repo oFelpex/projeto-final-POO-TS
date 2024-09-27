@@ -12,11 +12,13 @@ export default class TaskListComponent {
         if(toDoContainer) toDoContainer.innerHTML += this.render();
         
         document.querySelectorAll(".tasks-name").forEach(element => {
-            element.addEventListener("click", () => {
-                new TaskDetailsComponent(Number(element.id));
+            element.addEventListener("click", (event: Event) => {
+                const button = (event.target as HTMLElement).closest('button');
+                if(button) {
+                    new TaskDetailsComponent(Number(button.id));
+                }
             })
         })
-
     }
     render() {
         return `
