@@ -17,7 +17,7 @@ export default class TaskDetailsComponent {
             toDoContainer.innerHTML += this.render();
         const buttonEditTask = document.getElementById("buttonEditTask");
         buttonEditTask.addEventListener("click", () => {
-            EditTaskComponent(this.id);
+            new EditTaskComponent(this.id);
         });
         buttonEditTask.style.margin = "20px 50px 0px 60px";
         (_a = document.getElementById("buttonCancelEditTask")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
@@ -42,6 +42,12 @@ export default class TaskDetailsComponent {
                 break;
             case 5:
                 weekDay = "Sexta-feira";
+                break;
+            case 6:
+                weekDay = "Sábado";
+                break;
+            case 7:
+                weekDay = "Domingo";
                 break;
             default: weekDay = "Dia não encontrado!";
         }
@@ -91,7 +97,7 @@ export default class TaskDetailsComponent {
                 <input id="inputNameNewTask" class="inputNewTask" value="${this.name}" placeholder="Nome da Tarefa" minlength="2" maxlength="25" required disabled>
                 <p>Detalhes da Tarefa:</p>
                 <textarea placeholder="Descrição da sua tarefa" id="inputDescription-details" maxlength="360" disabled>${this.description}</textarea>
-                <p>Data da criação:<br>${weekDay} dia ${this.date.getDate()} de ${month} de ${this.date.getFullYear()}<br>Hora da criaçâo: ${this.date.getHours()}:${this.date.getMinutes()}:${this.date.getSeconds()}</p>
+                <p>Data da criação:<br>${weekDay}, dia ${this.date.getDate()} de ${month} de ${this.date.getFullYear()}.<br>A tarefa foi criada às ${this.date.getHours()} horas, ${this.date.getMinutes()} minutos e ${this.date.getSeconds()} segundos.</p>
                 
             </div>
             <button type="button" id="buttonEditTask" class="buttonNewTask">Editar Tarefa</button>
