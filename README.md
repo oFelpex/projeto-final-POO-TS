@@ -11,4 +11,4 @@ Enunciado da Atividade Final - Módulo 3
 - Deve ser criado pelo menos um "model" para representar a entidade do CRUD
 
 EXTRA:
-- Os dados do CRUD devem ser persistidos (leal storage ou outras firmas de persistencia, como API do CRUDCRUD)
+- Os dados do CRUD devem ser persistidos (local storage ou outras firmas de persistencia, como API do CRUDCRUD)
