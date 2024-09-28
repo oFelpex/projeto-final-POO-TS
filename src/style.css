@@ -168,9 +168,18 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid rgb(207, 213, 219);
+    color: aliceblue;
     cursor: pointer;
+}
+.uncheck {
+    border: 1px solid rgb(207, 213, 219);
     background-color: aliceblue;
+}
+.checked {
+    font-size: 25px;
+    text-align: center;
+    border: 1px solid rgb(46, 103, 150);
+    background-color: rgb(60, 134, 195);
 }
 .tasks-name {
     position: absolute;
@@ -181,7 +190,7 @@
     width: 280px;
     height: 60px;
     text-align: left;
-    
+    color: black;
     font-size: 18px;
 }
 

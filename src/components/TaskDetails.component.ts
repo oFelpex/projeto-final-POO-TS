@@ -32,7 +32,6 @@ export default class TaskDetailsComponent {
         document.getElementById("buttonCancelEditTask")?.addEventListener("click", () => {
             showHomePage();
         })
-        
     };
 
     render() {
@@ -82,7 +81,18 @@ export default class TaskDetailsComponent {
                 break;
             default: month = "Mês não encontrado!";
         }
-
+        let status: string;
+        switch(this.status) {
+            case false:
+                status = "Não Concluída";
+                break;
+            case true:
+                status = "Concluída";
+                break;
+            default:
+                status = "Não Concluída";
+                break;
+        }
         return `
             <div id="task-details">
                 <p>Nome da Tarefa:</p>
