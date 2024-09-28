@@ -207,3 +207,11 @@
 #buttonEditTask {
     margin-top: 20px;
 }
+#buttonSaveChange {
+    margin: 20px 50px 0px 60px;
+}
+#buttonEraseTask {
+    display: block;
+    position: relative;
+    background-color: rgb(154, 23, 23);
+}

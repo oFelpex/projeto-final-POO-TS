@@ -24,9 +24,9 @@ export default class TaskDetailsComponent {
         const toDoContainer = document.getElementById("to-do-container");
         if(toDoContainer) toDoContainer.innerHTML += this.render();
 
-        const buttonEditTask = document.getElementById("buttonEditTask") as HTMLButtonElement;
+        const buttonEditTask = (document.getElementById("buttonEditTask") as HTMLButtonElement);
         buttonEditTask.addEventListener("click", () => {
-            EditTaskComponent(this.id);
+            new EditTaskComponent(this.id);
         });
         buttonEditTask.style.margin = "20px 50px 0px 60px";
         document.getElementById("buttonCancelEditTask")?.addEventListener("click", () => {
