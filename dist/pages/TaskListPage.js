@@ -13,9 +13,11 @@ export default function showHomePage() {
     buttonNewTask.type = "button";
     buttonNewTask.id = "button-newTask";
     buttonNewTask.innerHTML = "+";
-    tasks.forEach((task) => {
-        new TaskListComponent(task);
+    tasks.forEach((task, index) => {
+        task.id = index;
+        new TaskListComponent(task.id);
     });
+    console.log(tasks);
     toDoContainer.append(buttonNewTask);
     document.getElementById("button-newTask").addEventListener("click", () => {
         createNewTaskPage();

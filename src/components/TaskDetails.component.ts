@@ -32,9 +32,6 @@ export default class TaskDetailsComponent {
         document.getElementById("buttonCancelEditTask")?.addEventListener("click", () => {
             showHomePage();
         })
-
-        const buttonCancelEditTask = document.getElementById("buttonCancelEditTask") as HTMLButtonElement;
-        buttonCancelEditTask.style.backgroundColor = "rgb(154, 23, 23)";
         
     };
 

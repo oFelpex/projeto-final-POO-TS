@@ -1,8 +1,9 @@
+import { tasks } from "../utils/storage.js";
 import TaskDetailsComponent from "./TaskDetails.component.js";
 export default class TaskListComponent {
-    constructor(task) {
-        this.name = task.name;
-        this.id = task.id;
+    constructor(taskId) {
+        this.name = tasks[taskId].name;
+        this.id = tasks[taskId].id;
         const toDoContainer = document.getElementById("to-do-container");
         if (toDoContainer)
             toDoContainer.innerHTML += this.render();

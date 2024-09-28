@@ -23,8 +23,6 @@ export default class TaskDetailsComponent {
         (_a = document.getElementById("buttonCancelEditTask")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
             showHomePage();
         });
-        const buttonCancelEditTask = document.getElementById("buttonCancelEditTask");
-        buttonCancelEditTask.style.backgroundColor = "rgb(154, 23, 23)";
     }
     ;
     render() {
