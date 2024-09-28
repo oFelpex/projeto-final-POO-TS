@@ -1,6 +1,8 @@
 import showHomePage from "../pages/TaskListPage.js";
 import { tasks, saveTasksToLocalStorage } from "../utils/storage.js";
 
+
+//TRANSFORMAR EM CLASSE
 export default function EditTaskComponent(taskId: number) {
         const inputNameNewTask = (document.getElementById("inputNameNewTask") as HTMLInputElement);
         const inputDescriptionDetails = (document.getElementById("inputDescription-details") as HTMLInputElement);
