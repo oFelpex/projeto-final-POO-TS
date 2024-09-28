@@ -18,7 +18,8 @@ export default function showHomePage() {
     buttonNewTask.id = "button-newTask";
     buttonNewTask.innerHTML = "+";
 
-    tasks.forEach((task, index) => {
+    const orderedTasks = tasks.sort((a, b) => Number(a.status) - Number(b.status));
+    orderedTasks.forEach((task, index) => {
         task.id = index;
         new TaskListComponent(task.id);
     });
