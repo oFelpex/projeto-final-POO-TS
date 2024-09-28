@@ -1,10 +1,13 @@
 import showHomePage from "../pages/TaskListPage.js";
 import { tasks, saveTasksToLocalStorage } from "../utils/storage.js";
+import HeaderComponent from "./HeaderComponent.component.js";
 export default class EditTaskComponent {
     constructor(taskId: number) {
         const toDoContainer = document.getElementById("to-do-container");
         if(toDoContainer) toDoContainer.innerHTML += this.render();
         
+        const navBarTitle = (document.getElementById("navBar_title")as HTMLElement);
+        navBarTitle.innerHTML = "Editar Tarefa";
         const inputNameNewTask = (document.getElementById("inputNameNewTask") as HTMLInputElement);
         const inputDescriptionDetails = (document.getElementById("inputDescription-details") as HTMLInputElement);
 

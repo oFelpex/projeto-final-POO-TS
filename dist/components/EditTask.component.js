@@ -6,6 +6,8 @@ export default class EditTaskComponent {
         const toDoContainer = document.getElementById("to-do-container");
         if (toDoContainer)
             toDoContainer.innerHTML += this.render();
+        const navBarTitle = document.getElementById("navBar_title");
+        navBarTitle.innerHTML = "Editar Tarefa";
         const inputNameNewTask = document.getElementById("inputNameNewTask");
         const inputDescriptionDetails = document.getElementById("inputDescription-details");
         inputNameNewTask.disabled = false;
