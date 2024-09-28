@@ -27,7 +27,7 @@ export default class TaskListComponent {
                 showHomePage();
             });
         });
-
+        
         //evento para abrir os detalhes ao clicar no nome da task
         document.querySelectorAll(".tasks-name").forEach(paragraph => {
             paragraph.addEventListener("click", (event) => {
@@ -36,10 +36,7 @@ export default class TaskListComponent {
                 new TaskDetailsComponent(taskId);
             });
         });
-
     }
-
-    // Método para renderizar o componente
     render() {
         return `
             <div class="tasks-container">
@@ -50,11 +47,9 @@ export default class TaskListComponent {
             </div>
         `;
     }
-
     getClassByStatus() {
         return this.status ? "checked" : "uncheck";
     }
-
     updateButtonStatus() {
         const button = document.getElementById(String(this.id));
         if (button) {

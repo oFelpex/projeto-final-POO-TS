@@ -30,7 +30,6 @@ export default class TaskListComponent {
             });
         });
     }
-    // Método para renderizar o componente
     render() {
         return `
             <div class="tasks-container">
