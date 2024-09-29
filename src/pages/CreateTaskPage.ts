@@ -1,6 +1,7 @@
 import showHomePage from "./TaskListPage.js";
 import HeaderComponent from "../components/HeaderComponent.component.js";
-import { Task, tasks, saveTasksToLocalStorage } from "../utils/storage.js";
+import { tasks, saveTasksToLocalStorage } from "../utils/storage.js";
+import { Task } from "../models/Task.js";
 
 export function createNewTaskPage() {
     window.location.hash = '#createTaskPage';
