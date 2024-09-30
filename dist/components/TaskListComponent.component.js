@@ -1,6 +1,6 @@
 import showHomePage from "../pages/TaskListPage.js";
 import { saveTasksToLocalStorage, tasks } from "../utils/storage.js";
-import TaskDetailsComponent from "./TaskDetails.component.js";
+import TaskDetailsComponent from "./TaskDetailsComponent.component.js";
 export default class TaskListComponent {
     constructor(taskId) {
         this.name = tasks[taskId].name;

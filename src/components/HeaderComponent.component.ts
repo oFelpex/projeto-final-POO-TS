@@ -7,6 +7,11 @@ export default class HeaderComponent {
         this.location = location;
         const header = document.getElementById("to-do-container");
         if(header) header.innerHTML = this.render();
+
+        const buttonMenu = document.getElementById("button-menu");
+        buttonMenu?.addEventListener("click", () => {
+            console.log(":D");
+        });
     }
     render() {
         return `

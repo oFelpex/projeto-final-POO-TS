@@ -1,47 +1,42 @@
 import showHomePage from "../pages/TaskListPage.js";
 import { tasks, saveTasksToLocalStorage } from "../utils/storage.js";
-import HeaderComponent from "./HeaderComponent.component.js";
 export default class EditTaskComponent {
-    constructor(taskId: number) {
+    constructor(taskId) {
+        var _a, _b;
         const toDoContainer = document.getElementById("to-do-container");
-        if(toDoContainer) toDoContainer.innerHTML += this.render();
-        
-        const navBarTitle = (document.getElementById("navBar_title")as HTMLElement);
+        if (toDoContainer)
+            toDoContainer.innerHTML += this.render();
+        const navBarTitle = document.getElementById("navBar_title");
         navBarTitle.innerHTML = "Editar Tarefa";
-        const inputNameNewTask = (document.getElementById("inputNameNewTask") as HTMLInputElement);
-        const inputDescriptionDetails = (document.getElementById("inputDescription-details") as HTMLInputElement);
-
-        inputNameNewTask.disabled = false
+        const inputNameNewTask = document.getElementById("inputNameNewTask");
+        const inputDescriptionDetails = document.getElementById("inputDescription-details");
+        inputNameNewTask.disabled = false;
         inputDescriptionDetails.disabled = false;
-        
-        const buttonSaveChange = (document.getElementById("buttonSaveChange")as HTMLButtonElement);
+        const buttonSaveChange = document.getElementById("buttonSaveChange");
         buttonSaveChange.addEventListener("click", () => {
             tasks[taskId].name = inputNameNewTask.value;
             tasks[taskId].description = inputDescriptionDetails.value;
             saveTasksToLocalStorage();
             showHomePage();
         });
-        
-        const buttonCancelChange = (document.getElementById("buttonCancelChange")as HTMLButtonElement);
+        const buttonCancelChange = document.getElementById("buttonCancelChange");
         buttonCancelChange.addEventListener("click", () => {
             showHomePage();
         });
-
-        const buttonEraseTask = (document.getElementById("buttonEraseTask") as HTMLButtonElement);
+        const buttonEraseTask = document.getElementById("buttonEraseTask");
         buttonEraseTask.addEventListener("click", () => {
             tasks.splice(taskId, 1);
             saveTasksToLocalStorage();
             showHomePage();
         });
-
-        document.getElementById("buttonEditTask")?.remove();
-        document.getElementById("buttonCancelEditTask")?.remove();
+        (_a = document.getElementById("buttonEditTask")) === null || _a === void 0 ? void 0 : _a.remove();
+        (_b = document.getElementById("buttonCancelEditTask")) === null || _b === void 0 ? void 0 : _b.remove();
     }
     render() {
         return `
             <button type="button" id="buttonSaveChange" class="buttonNewTask">Salvar Alterações</button>
             <button type="button" id="buttonCancelChange" class="buttonNewTask">Discartar Alterações</button>
             <button type="button" id="buttonEraseTask" class="buttonNewTask">Apagar Tarefa</button>
-        `
+        `;
     }
 }
