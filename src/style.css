@@ -219,3 +219,20 @@
     position: relative;
     background-color: rgb(154, 23, 23);
 }
+#task-filter {
+    height: 80%;
+    width: 100%;
+    margin-top: 70px;
+}
+#form-filter{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+}
+#filter-type {
+    width: 80%;
+    height: 30px;
+}

@@ -1,3 +1,4 @@
+import FilterTaskComponent from "./FilterTaskComponent.component.js";
 export default class HeaderComponent {
     constructor(location) {
         this.location = location;
@@ -7,7 +8,7 @@ export default class HeaderComponent {
         setTimeout(() => {
             const buttonMenu = document.getElementById("button-menu");
             buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListener("click", () => {
-                alert("Em breve...");
+                new FilterTaskComponent;
             });
         }, 100);
     }
