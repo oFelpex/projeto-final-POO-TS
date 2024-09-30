@@ -14,13 +14,8 @@ export default function showHomePage() {
     buttonNewTask.id = "button-newTask";
     buttonNewTask.innerHTML = "+";
     const orderedTasks = tasks.sort((a, b) => Number(a.status) - Number(b.status));
-    orderedTasks.forEach((task, index) => {
-        task.id = index;
-        new TaskListComponent(task.id);
-    });
+    orderedTasks.forEach((task, index) => { task.id = index, new TaskListComponent(task.id); });
     console.log(tasks);
     toDoContainer.append(buttonNewTask);
-    document.getElementById("button-newTask").addEventListener("click", () => {
-        new CreateTaskPage;
-    });
+    document.getElementById("button-newTask").addEventListener("click", () => new CreateTaskPage);
 }

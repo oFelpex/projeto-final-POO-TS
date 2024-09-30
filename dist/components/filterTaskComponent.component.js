@@ -3,9 +3,10 @@ import HeaderComponent from "./HeaderComponent.component.js";
 export default class FilterTaskComponent {
     constructor() {
         new HeaderComponent("Filtrar Tarefas");
-        const toDoContainer = document.getElementById("to-do-container");
-        if (toDoContainer) toDoContainer.innerHTML += this.render();
         filterMenu();
+        const toDoContainer = document.getElementById("to-do-container");
+        if (toDoContainer)
+            toDoContainer.innerHTML += this.render();
     }
     render() {
         return `
@@ -19,8 +20,7 @@ export default class FilterTaskComponent {
                         <option value="Mais Recente">Mais Recente</option>
                         <option value="Mais Antigo">Mais Antigo</option>
                     </select>
-                    <button type="submit">Enviar</button>
-                    <button type="button" id="buttonCancel">Cancelar</button>
+                    <input type="submit" value="Enviar">
                 </form>
             </div>
 

@@ -14,9 +14,7 @@ export default class HeaderComponent {
 
         setTimeout(() => {
             const buttonMenu = document.getElementById("button-menu");
-            buttonMenu?.addEventListener("click", () => {
-                new FilterTaskComponent;
-            });
+            buttonMenu?.addEventListener("click", () => new FilterTaskComponent);
         }, 100);
     }
     render() {

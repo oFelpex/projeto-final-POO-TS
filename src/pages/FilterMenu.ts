@@ -12,8 +12,5 @@ export default function filterMenu() {
     });
 
     const buttonCancel = (document.getElementById("buttonCancel") as HTMLButtonElement);
-    buttonCancel?.addEventListener("click", () =>{
-        showHomePage();
-    });
-
+    buttonCancel?.addEventListener("click", () => showHomePage());
 }

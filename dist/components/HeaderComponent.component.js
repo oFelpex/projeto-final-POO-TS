@@ -8,9 +8,7 @@ export default class HeaderComponent {
             header.innerHTML = this.render();
         setTimeout(() => {
             const buttonMenu = document.getElementById("button-menu");
-            buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListener("click", () => {
-                new FilterTaskComponent;
-            });
+            buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListener("click", () => new FilterTaskComponent);
         }, 100);
     }
     render() {

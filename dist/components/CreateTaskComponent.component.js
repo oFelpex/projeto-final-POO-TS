@@ -12,7 +12,7 @@ export default class CreateTaskPage {
     render() {
         return `
         <div id="createNewTaskPage">
-            <form id="containerCreateNewTask">
+            <form id="containerCreateNewTask" method="post">
                 <label for="inputNameNewTask" class="labelNewTask">Nome:</label>
                 <input id="inputNameNewTask" class="inputNewTask" placeholder="Nome da Tarefa" minlength="2" maxlength="25" required="">
                 <label for="inputDescriptionNewTask" class="labelNewTask">Descrição:</label>

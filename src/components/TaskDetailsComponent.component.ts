@@ -20,19 +20,16 @@ export default class TaskDetailsComponent {
         this.id = tasks[taskId].id;
         this.status = tasks[taskId].status;
 
+        //ENCONTRAR UMA FORMA MELHOR DE FAZER ISSO:
         window.location.hash = `#details+id=${this.id}`
 
         const toDoContainer = document.getElementById("to-do-container");
         if(toDoContainer) toDoContainer.innerHTML += this.render();
 
         const buttonEditTask = (document.getElementById("buttonEditTask") as HTMLButtonElement);
-        buttonEditTask.addEventListener("click", () => {
-            new EditTaskComponent(this.id);
-        });
+        buttonEditTask.addEventListener("click", () => new EditTaskComponent(this.id));
         buttonEditTask.style.margin = "20px 50px 0px 60px";
-        document.getElementById("buttonCancelEditTask")?.addEventListener("click", () => {
-            showHomePage();
-        });
+        document.getElementById("buttonCancelEditTask")?.addEventListener("click", () => showHomePage());
     };
 
     render() {

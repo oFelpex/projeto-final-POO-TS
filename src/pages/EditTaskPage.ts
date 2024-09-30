@@ -13,7 +13,6 @@ export default function editTaskPage(taskId: number) {
     
     const buttonSaveChange = (document.getElementById("buttonSaveChange")as HTMLButtonElement);
     buttonSaveChange.addEventListener("click", () => {
-        //ADICIONAR FUNÇÂO ABAIXO
         if(inputNameNewTask.value !== tasks[taskId].name || inputDescriptionDetails.value !== tasks[taskId].description) {
             modalChangeTask(taskId);
         } else {
@@ -22,9 +21,7 @@ export default function editTaskPage(taskId: number) {
     });
     
     const buttonCancelChange = (document.getElementById("buttonCancelChange")as HTMLButtonElement);
-    buttonCancelChange.addEventListener("click", () => {
-        showHomePage();
-    });
+    buttonCancelChange.addEventListener("click", () => showHomePage());
 
     const buttonEraseTask = (document.getElementById("buttonEraseTask") as HTMLButtonElement);
     buttonEraseTask.addEventListener("click", () => {
@@ -65,10 +62,7 @@ function modalChangeTask(taskId: number) {
     buttonDeny.innerHTML = "Continuar Editando";
     buttonDeny.id = "button-deny";
     buttonDeny.classList.add("buttonChangeTask");
-    buttonDeny.addEventListener("click", () => {
-        modalEditTaskConfirm.remove();
-        shadowContainer.remove();
-    });
+    buttonDeny.addEventListener("click", () => {modalEditTaskConfirm.remove(), shadowContainer.remove()});
 
     modalEditTaskConfirm.append(confirmTitle, buttonConfirm, buttonDeny);
     shadowContainer.append(modalEditTaskConfirm);

@@ -5,9 +5,7 @@ import { Task } from "../models/Task.js";
 //TRANSFORMAR EM CLASSE
 export function createTaskPage() {
     const buttonCancelNewTask = document.getElementById("button-cancel-newTask");
-    buttonCancelNewTask?.addEventListener("click", () => {
-        showHomePage();
-    });
+    buttonCancelNewTask?.addEventListener("click", () => showHomePage());
 
     const formCreateNewTask = document.getElementById("containerCreateNewTask");
     formCreateNewTask?.addEventListener("submit", (event) => {

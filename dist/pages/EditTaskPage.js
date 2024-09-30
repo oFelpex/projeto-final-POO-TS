@@ -10,7 +10,6 @@ export default function editTaskPage(taskId) {
     inputDescriptionDetails.disabled = false;
     const buttonSaveChange = document.getElementById("buttonSaveChange");
     buttonSaveChange.addEventListener("click", () => {
-        //ADICIONAR FUNÇÂO ABAIXO
         if (inputNameNewTask.value !== tasks[taskId].name || inputDescriptionDetails.value !== tasks[taskId].description) {
             modalChangeTask(taskId);
         }
@@ -19,9 +18,7 @@ export default function editTaskPage(taskId) {
         }
     });
     const buttonCancelChange = document.getElementById("buttonCancelChange");
-    buttonCancelChange.addEventListener("click", () => {
-        showHomePage();
-    });
+    buttonCancelChange.addEventListener("click", () => showHomePage());
     const buttonEraseTask = document.getElementById("buttonEraseTask");
     buttonEraseTask.addEventListener("click", () => {
         tasks.splice(taskId, 1);
@@ -54,10 +51,7 @@ function modalChangeTask(taskId) {
     buttonDeny.innerHTML = "Continuar Editando";
     buttonDeny.id = "button-deny";
     buttonDeny.classList.add("buttonChangeTask");
-    buttonDeny.addEventListener("click", () => {
-        modalEditTaskConfirm.remove();
-        shadowContainer.remove();
-    });
+    buttonDeny.addEventListener("click", () => { modalEditTaskConfirm.remove(), shadowContainer.remove(); });
     modalEditTaskConfirm.append(confirmTitle, buttonConfirm, buttonDeny);
     shadowContainer.append(modalEditTaskConfirm);
     toDoContainer === null || toDoContainer === void 0 ? void 0 : toDoContainer.append(shadowContainer);
