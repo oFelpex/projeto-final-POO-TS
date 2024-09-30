@@ -11,7 +11,7 @@ export default class HeaderComponent {
         setTimeout(() => {
             const buttonMenu = document.getElementById("button-menu");
             buttonMenu?.addEventListener("click", () => {
-                console.log("botão clicado");
+                alert("Em breve...");
             });
         }, 100);
     }

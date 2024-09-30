@@ -63,8 +63,8 @@
 #button-newTask {
     position: fixed;
     left: 50%;
-    top: 75%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, 250%);
     width: 90px;
     height: 90px;
     border-radius: 50%;
@@ -82,18 +82,10 @@
     background-color: rgb(54, 95, 185);
 }
 #createNewTaskPage {
-    position: absolute;
     display: flex;
     flex-wrap: wrap;
-    top: 3%;
-    left: 3%;
     margin-top: 60px;
-    width: 94%;
-    height: 87%;
-    border-radius: 5px;
-    background-color: aliceblue;
     z-index: 200;
-    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.4));;
 }
 #containerCreateNewTask {
     display: flex;
