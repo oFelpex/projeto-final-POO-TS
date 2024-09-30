@@ -1,4 +1,4 @@
-import { createNewTaskPage } from "./CreateTaskPage.js";
+import CreateTaskPage from "../components/CreateTaskComponent.component.js";
 import HeaderComponent from "../components/HeaderComponent.component.js";
 import TaskListComponent from "../components/TaskListComponent.component.js";
 import { tasks, loadTasksFromLocalStorage } from "../utils/storage.js";
@@ -27,6 +27,6 @@ export default function showHomePage() {
 
     toDoContainer.append(buttonNewTask);
     (document.getElementById("button-newTask") as HTMLElement).addEventListener("click", () => {
-        createNewTaskPage();
+        new CreateTaskPage;
     });
 }

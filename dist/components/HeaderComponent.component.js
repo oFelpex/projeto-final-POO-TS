@@ -4,10 +4,12 @@ export default class HeaderComponent {
         const header = document.getElementById("to-do-container");
         if (header)
             header.innerHTML = this.render();
-        const buttonMenu = document.getElementById("button-menu");
-        buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListener("click", () => {
-            console.log(":D");
-        });
+        setTimeout(() => {
+            const buttonMenu = document.getElementById("button-menu");
+            buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListener("click", () => {
+                console.log("botão clicado");
+            });
+        }, 100);
     }
     render() {
         return `

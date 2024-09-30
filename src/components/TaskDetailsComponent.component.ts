@@ -32,7 +32,7 @@ export default class TaskDetailsComponent {
         buttonEditTask.style.margin = "20px 50px 0px 60px";
         document.getElementById("buttonCancelEditTask")?.addEventListener("click", () => {
             showHomePage();
-        })
+        });
     };
 
     render() {
