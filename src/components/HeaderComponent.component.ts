@@ -5,6 +5,8 @@ type Location = "Lista de Tarefas" | "Filtrar Tarefas" | "Editar Tarefas" | "Cri
 export default class HeaderComponent {
     location: Location;
 
+    //ADICIONAR HERANÇA, GETTERS E SETTERS
+
     constructor(location: Location) {
         this.location = location;
         const header = document.getElementById("to-do-container");

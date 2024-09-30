@@ -1,5 +1,6 @@
 import FilterTaskComponent from "./FilterTaskComponent.component.js";
 export default class HeaderComponent {
+    //ADICIONAR HERANÇA, GETTERS E SETTERS
     constructor(location) {
         this.location = location;
         const header = document.getElementById("to-do-container");

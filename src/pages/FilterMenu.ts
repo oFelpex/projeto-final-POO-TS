@@ -7,8 +7,13 @@ export default function filterMenu() {
     const toDoContainer = document.getElementById("to-do-container");
 
     const formFilter = (document.getElementById("form-filter") as HTMLFormElement);
-
     formFilter?.addEventListener("submit", (event: Event) => {
-        
+
     });
+
+    const buttonCancel = (document.getElementById("buttonCancel") as HTMLButtonElement);
+    buttonCancel?.addEventListener("click", () =>{
+        showHomePage();
+    });
+
 }

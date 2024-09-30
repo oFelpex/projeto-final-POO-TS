@@ -1,3 +1,4 @@
+import editTaskPage from "../pages/EditTaskPage.js";
 import { taksStatus, taskMonth, taskWeekDay } from "../pages/TaskDetailPage.js";
 import showHomePage from "../pages/TaskListPage.js";
 import { tasks, saveTasksToLocalStorage } from "../utils/storage.js";
@@ -17,38 +18,11 @@ export default class EditTaskComponent {
         this.date = new Date(tasks[taskId].date);
         this.id = tasks[taskId].id;
         this.status = tasks[taskId].status;
-        
-        document.getElementById("buttonEditTask")?.remove();
-        document.getElementById("buttonCancelEditTask")?.remove();
 
         const toDoContainer = document.getElementById("to-do-container");
         if(toDoContainer) toDoContainer.innerHTML += this.render();
         
-        const inputNameNewTask = (document.getElementById("inputNameNewTask") as HTMLInputElement);
-        const inputDescriptionDetails = (document.getElementById("inputDescription-details") as HTMLInputElement);
-
-        inputNameNewTask.disabled = false
-        inputDescriptionDetails.disabled = false;
-        
-        const buttonSaveChange = (document.getElementById("buttonSaveChange")as HTMLButtonElement);
-        buttonSaveChange.addEventListener("click", () => {
-            tasks[taskId].name = inputNameNewTask.value;
-            tasks[taskId].description = inputDescriptionDetails.value;
-            saveTasksToLocalStorage();
-            showHomePage();
-        });
-        
-        const buttonCancelChange = (document.getElementById("buttonCancelChange")as HTMLButtonElement);
-        buttonCancelChange.addEventListener("click", () => {
-            showHomePage();
-        });
-
-        const buttonEraseTask = (document.getElementById("buttonEraseTask") as HTMLButtonElement);
-        buttonEraseTask.addEventListener("click", () => {
-            tasks.splice(taskId, 1);
-            saveTasksToLocalStorage();
-            showHomePage();
-        });
+        editTaskPage(taskId);
     }
     render() {
         return `
@@ -62,7 +36,7 @@ export default class EditTaskComponent {
                 
             </div>
             <button type="button" id="buttonSaveChange" class="buttonNewTask">Salvar Alterações</button>
-            <button type="button" id="buttonCancelChange" class="buttonNewTask">Discartar Alterações</button>
+            <button type="button" id="buttonCancelChange" class="buttonNewTask">Retornar ao Início</button>
             <button type="button" id="buttonEraseTask" class="buttonNewTask">Apagar Tarefa</button>
         `
     }
