@@ -213,7 +213,7 @@
     grid-template-columns: 1fr 1fr;
     row-gap: 10px;
     grid-template-rows: 1fr 1fr;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 #buttonSaveChange {
     grid-row: 1;
