@@ -17,8 +17,8 @@ export default class TaskListComponent {
 
         //evento para mudar o status ao clicar no botão de check
         document.querySelectorAll(".check-container").forEach(button => {
-            button.addEventListener("click", (event) => {
-                const buttonElement = event.target as HTMLElement;
+            button.addEventListener("click", (element) => {
+                const buttonElement = element.target as HTMLElement;
                 const taskId = Number(buttonElement.id);
                 
                 tasks[taskId].status = !tasks[taskId].status;
@@ -30,8 +30,8 @@ export default class TaskListComponent {
         
         //evento para abrir os detalhes ao clicar no nome da task
         document.querySelectorAll(".tasks-name").forEach(paragraph => {
-            paragraph.addEventListener("click", (event) => {
-                const paragraphElement = event.target as HTMLElement;
+            paragraph.addEventListener("click", (element) => {
+                const paragraphElement = element.target as HTMLElement;
                 const taskId = Number(paragraphElement.previousElementSibling?.id);
                 new TaskDetailsComponent(taskId);
             });
