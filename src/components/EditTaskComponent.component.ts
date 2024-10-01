@@ -35,9 +35,11 @@ export default class EditTaskComponent {
                 Status da tarefa: ${taksStatus(this.status)}</p>
                 
             </div>
-            <button type="button" id="buttonSaveChange" class="buttonNewTask">Salvar Alterações</button>
-            <button type="button" id="buttonCancelChange" class="buttonNewTask">Retornar ao Início</button>
-            <button type="button" id="buttonEraseTask" class="buttonNewTask">Apagar Tarefa</button>
+            <div id="buttons-edit-container">
+                <button type="button" id="buttonSaveChange" class="buttonNewTask">Salvar Alterações</button>
+                <button type="button" id="buttonCancelChange" class="buttonNewTask">Retornar ao Início</button>
+                <button type="button" id="buttonEraseTask" class="buttonNewTask">Apagar Tarefa</button>
+            </div>
         `
     }
 }

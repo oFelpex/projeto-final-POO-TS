@@ -40,9 +40,9 @@ export default class TaskListComponent {
     render() {
         return `
             <div class="tasks-container">
-                <button id="${this.id}" type="button" class="check-container ${this.getClassByStatus()}">
+                <div id="${this.id}" type="button" class="check-container ${this.getClassByStatus()}">
                     ${this.status ? "✓" : ""}
-                </button>
+                </div>
                 <p class="tasks-name">${this.name}</p>
             </div>
         `;

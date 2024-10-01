@@ -17,8 +17,8 @@ export default class FilterTaskComponent {
         return `
             <div id="task-filter">
                 <form action="" method="get" id="form-filter">
-                    <label for="filter-type" id="label-filter-type">Deseja ordenar por:</label>
-                    <select id="filter-type" name="filter-type" required>
+                    <label class="paragraph" for="filter-type" id="label-filter-type">Deseja ordenar por:</label>
+                    <select class="paragraph" id="filter-type" name="filter-type" required>
                         <option value="" selected disabled>Selecione uma opção</option>
                         <option value="checked">Concluídas</option>
                         <option value="unchecked">Pendentes</option>
@@ -29,8 +29,8 @@ export default class FilterTaskComponent {
                     <button type="button" id="buttonCancelFilter" class="buttonNewTask">Cancelar</button>
                 </form>
                 <form action="" method="get" id="form-search" >
-                    <label for="search-input" id="label-search-input">Pesquisar por nome:</label>
-                    <input type="text" name="search" id="search-input" class="inputNewTask" maxlength="25" required>
+                    <label class="paragraph" for="search-input" id="label-search-input">Pesquisar por nome:</label>
+                    <input class="paragraph" type="text" name="search" id="search-input" class="inputNewTask" maxlength="25" required>
                     <button type="submit" id="buttonSearch" class="buttonNewTask">Pesquisar</button>
                     <button type="button" id="buttonCancelSearch" class="buttonNewTask">Cancelar</button>
                 </form>
