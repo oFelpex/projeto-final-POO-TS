@@ -20,7 +20,7 @@ export default function filterTasks() {
                 orderedTasks = tasks.sort((a, b) => Date.parse(String(a.date)) - Date.parse(String(b.date)));
                 break;
             default:
-                orderedTasks = tasks;
+                console.log("Opa, algo deu errado aqui, meu fih");
                 break;
         }
     }

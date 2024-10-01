@@ -20,7 +20,7 @@ export default class FilterTaskComponent {
         return `
             <div id="task-filter">
                 <form action="" method="get" id="form-filter">
-                    <label for="filter-type" id="label-filter-type">Deseja filtrar por:</label>
+                    <label for="filter-type" id="label-filter-type">Deseja ordenar por:</label>
                     <select id="filter-type" name="filter-type" required>
                         <option value="" selected disabled>Selecione uma opção</option>
                         <option value="checked">Concluídas</option>
