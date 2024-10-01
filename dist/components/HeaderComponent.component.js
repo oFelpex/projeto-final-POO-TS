@@ -1,4 +1,6 @@
+import FilterTaskComponent from "./FilterTaskComponent.component.js";
 export default class HeaderComponent {
+    //ADICIONAR HERANÇA, GETTERS E SETTERS
     constructor(location) {
         this.location = location;
         const header = document.getElementById("to-do-container");
@@ -6,9 +8,7 @@ export default class HeaderComponent {
             header.innerHTML = this.render();
         setTimeout(() => {
             const buttonMenu = document.getElementById("button-menu");
-            buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListener("click", () => {
-                console.log("botão clicado");
-            });
+            buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListener("click", () => new FilterTaskComponent);
         }, 100);
     }
     render() {

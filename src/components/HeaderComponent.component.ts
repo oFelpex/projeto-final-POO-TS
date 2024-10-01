@@ -1,7 +1,11 @@
+import FilterTaskComponent from "./FilterTaskComponent.component.js";
+
 type Location = "Lista de Tarefas" | "Filtrar Tarefas" | "Editar Tarefas" | "Criar Tarefas" | "Detalhes da Tarefa"
 
 export default class HeaderComponent {
     location: Location;
+
+    //ADICIONAR HERANÇA, GETTERS E SETTERS
 
     constructor(location: Location) {
         this.location = location;
@@ -10,9 +14,7 @@ export default class HeaderComponent {
 
         setTimeout(() => {
             const buttonMenu = document.getElementById("button-menu");
-            buttonMenu?.addEventListener("click", () => {
-                console.log("botão clicado");
-            });
+            buttonMenu?.addEventListener("click", () => new FilterTaskComponent);
         }, 100);
     }
     render() {

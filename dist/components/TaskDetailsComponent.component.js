@@ -12,18 +12,15 @@ export default class TaskDetailsComponent {
         this.date = new Date(tasks[taskId].date);
         this.id = tasks[taskId].id;
         this.status = tasks[taskId].status;
+        //ENCONTRAR UMA FORMA MELHOR DE FAZER ISSO:
         window.location.hash = `#details+id=${this.id}`;
         const toDoContainer = document.getElementById("to-do-container");
         if (toDoContainer)
             toDoContainer.innerHTML += this.render();
         const buttonEditTask = document.getElementById("buttonEditTask");
-        buttonEditTask.addEventListener("click", () => {
-            new EditTaskComponent(this.id);
-        });
+        buttonEditTask.addEventListener("click", () => new EditTaskComponent(this.id));
         buttonEditTask.style.margin = "20px 50px 0px 60px";
-        (_a = document.getElementById("buttonCancelEditTask")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
-            showHomePage();
-        });
+        (_a = document.getElementById("buttonCancelEditTask")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => showHomePage());
     }
     ;
     render() {

@@ -42,8 +42,8 @@ export default class TaskListComponent {
             <div class="tasks-container">
                 <button id="${this.id}" type="button" class="check-container ${this.getClassByStatus()}">
                     ${this.status ? "✓" : ""}
-                    </button>
-                    <p class="tasks-name">${this.name}</p>
+                </button>
+                <p class="tasks-name">${this.name}</p>
             </div>
         `;
     }

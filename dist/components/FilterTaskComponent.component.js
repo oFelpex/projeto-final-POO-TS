@@ -1,19 +1,16 @@
 import showHomePage from "../pages/TaskListPage.js";
 import HeaderComponent from "./HeaderComponent.component.js";
-
 export default class FilterTaskComponent {
     constructor() {
         new HeaderComponent("Filtrar Tarefas");
-        
         const toDoContainer = document.getElementById("to-do-container");
-        if(toDoContainer) toDoContainer.innerHTML += this.render();
-
+        if (toDoContainer)
+            toDoContainer.innerHTML += this.render();
         const buttonMenu = document.getElementById("button-menu");
-        buttonMenu?.remove();
-    
-        const buttonCancelFilter = (document.getElementById("buttonCancelFilter") as HTMLButtonElement);
+        buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.remove();
+        const buttonCancelFilter = document.getElementById("buttonCancelFilter");
         buttonCancelFilter.addEventListener("click", () => showHomePage());
-        const buttonCancelSearch = (document.getElementById("buttonCancelSearch") as HTMLButtonElement);
+        const buttonCancelSearch = document.getElementById("buttonCancelSearch");
         buttonCancelSearch.addEventListener("click", () => showHomePage());
     }
     render() {
@@ -39,6 +36,6 @@ export default class FilterTaskComponent {
                 </form>
             </div>
 
-        `
+        `;
     }
 }
