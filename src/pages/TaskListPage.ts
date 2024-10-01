@@ -2,7 +2,7 @@ import CreateTaskPage from "../components/CreateTaskComponent.component.js";
 import HeaderComponent from "../components/HeaderComponent.component.js";
 import TaskListComponent from "../components/TaskListComponent.component.js";
 import { tasks, loadTasksFromLocalStorage } from "../utils/storage.js";
-import filterTasks from "./FilterTasks.js";
+import filterTasks from "../utils/FilterTasks.js";
 
 export default function showHomePage() {
     // window.location.hash = '#home';

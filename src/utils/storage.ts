@@ -1,5 +1,5 @@
 import { Task } from "../models/Task.js";
-import filterTasks from "../pages/FilterTasks.js";
+import filterTasks from "./FilterTasks.js";
 
 export let tasks: Task[] = [];
 

@@ -1,4 +1,4 @@
-import filterTasks from "../pages/FilterTasks.js";
+import filterTasks from "./FilterTasks.js";
 export let tasks = [];
 export function saveTasksToLocalStorage() {
     localStorage.setItem("tasks", JSON.stringify(filterTasks()));
