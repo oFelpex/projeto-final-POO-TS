@@ -1,5 +1,5 @@
 import { Task } from "../models/Task.js";
-import { saveTasksToLocalStorage, tasks } from "./storage.js";
+import { tasks } from "./storage.js";
 
 export default function filterTasks(): Task[] {
     let orderedTasks: Task[] = tasks;
