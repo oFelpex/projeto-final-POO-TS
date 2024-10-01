@@ -1,5 +1,5 @@
 import { Task } from "../models/Task.js";
-import { tasks } from "../utils/storage.js";
+import { saveTasksToLocalStorage, tasks } from "../utils/storage.js";
 
 export default function filterTasks(): Task[] {
     let orderedTasks: Task[] = tasks;
@@ -21,7 +21,7 @@ export default function filterTasks(): Task[] {
                 orderedTasks = tasks.sort((a, b) => Date.parse(String(a.date)) - Date.parse(String(b.date)));
                 break;
             default:
-                orderedTasks = tasks;
+                console.log("Opa, algo deu errado aqui, meu fih");
                 break;
         }
     } else if(searchValue) {

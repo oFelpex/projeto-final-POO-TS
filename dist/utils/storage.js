@@ -1,6 +1,7 @@
+import filterTasks from "../pages/FilterTasks.js";
 export let tasks = [];
 export function saveTasksToLocalStorage() {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(filterTasks()));
 }
 export function loadTasksFromLocalStorage() {
     const tasksString = localStorage.getItem("tasks");

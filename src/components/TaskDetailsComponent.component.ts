@@ -21,7 +21,7 @@ export default class TaskDetailsComponent {
         this.status = tasks[taskId].status;
 
         //ENCONTRAR UMA FORMA MELHOR DE FAZER ISSO:
-        window.location.hash = `#details+id=${this.id}`
+        // window.location.hash = `#details+id=${this.id}`
 
         const toDoContainer = document.getElementById("to-do-container");
         if(toDoContainer) toDoContainer.innerHTML += this.render();
