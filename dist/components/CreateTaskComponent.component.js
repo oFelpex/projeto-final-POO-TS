@@ -4,8 +4,6 @@ export default class CreateTaskPage {
     constructor() {
         new HeaderComponent("Criar Tarefas");
         const toDoContainer = document.getElementById("to-do-container");
-        toDoContainer.scrollTo({ top: 0, behavior: 'smooth' });
-        toDoContainer.style.overflowY = "hidden";
         toDoContainer.innerHTML += this.render();
         createTaskPage();
     }

@@ -33,7 +33,6 @@ export default class EditTaskComponent {
                 <textarea placeholder="Descrição da sua tarefa" id="inputDescription-details" maxlength="360" disabled>${this.description}</textarea>
                 <p>Data da criação:<br>${taskWeekDay(this.date.getDay())}, dia ${this.date.getDate()} de ${taskMonth(this.date.getMonth()+1)} de ${this.date.getFullYear()}.<br>A tarefa foi criada às ${this.date.getHours()} horas, ${this.date.getMinutes()} minutos e ${this.date.getSeconds()} segundos.<br>
                 Status da tarefa: ${taksStatus(this.status)}</p>
-                
             </div>
             <div id="buttons-edit-container">
                 <button type="button" id="buttonSaveChange" class="buttonNewTask">Salvar Alterações</button>

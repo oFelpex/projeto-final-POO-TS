@@ -1,11 +1,12 @@
 import FilterTaskComponent from "./FilterTaskComponent.component.js";
 export default class HeaderComponent {
-    //ADICIONAR HERANÇA, GETTERS E SETTERS
+    //ADICIONAR HERANÇA, GETTERS E SETTERS NO FUTURO, talvez...
     constructor(location) {
         this.location = location;
         const header = document.getElementById("to-do-container");
         if (header)
             header.innerHTML = this.render();
+        //tive que adicionar um timeout porquê se não, não funciona 
         setTimeout(() => {
             const buttonMenu = document.getElementById("button-menu");
             buttonMenu === null || buttonMenu === void 0 ? void 0 : buttonMenu.addEventListener("click", () => new FilterTaskComponent);
