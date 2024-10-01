@@ -27,11 +27,11 @@ export default class EditTaskComponent {
     render() {
         return `
             <div id="task-details">
-                <p>Nome da Tarefa:</p>
+                <p class="paragraph">Nome da Tarefa:</p>
                 <input id="inputNameNewTask" class="inputNewTask" value="${this.name}" placeholder="Nome da Tarefa" minlength="2" maxlength="25" required disabled>
-                <p>Detalhes da Tarefa:</p>
+                <p class="paragraph">Detalhes da Tarefa:</p>
                 <textarea placeholder="Descrição da sua tarefa" id="inputDescription-details" maxlength="360" disabled>${this.description}</textarea>
-                <p>Data da criação:<br>${taskWeekDay(this.date.getDay())}, dia ${this.date.getDate()} de ${taskMonth(this.date.getMonth()+1)} de ${this.date.getFullYear()}.<br>A tarefa foi criada às ${this.date.getHours()} horas, ${this.date.getMinutes()} minutos e ${this.date.getSeconds()} segundos.<br>
+                <p class="paragraph">Data da criação:<br>${taskWeekDay(this.date.getDay())}, dia ${this.date.getDate()} de ${taskMonth(this.date.getMonth()+1)} de ${this.date.getFullYear()}.<br>A tarefa foi criada às ${this.date.getHours()} horas, ${this.date.getMinutes()} minutos e ${this.date.getSeconds()} segundos.<br>
                 Status da tarefa: ${taksStatus(this.status)}</p>
             </div>
             <div id="buttons-edit-container">
