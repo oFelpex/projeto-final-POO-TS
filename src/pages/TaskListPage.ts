@@ -2,9 +2,10 @@ import CreateTaskPage from "../components/CreateTaskComponent.component.js";
 import HeaderComponent from "../components/HeaderComponent.component.js";
 import TaskListComponent from "../components/TaskListComponent.component.js";
 import { tasks, loadTasksFromLocalStorage } from "../utils/storage.js";
+import filterTasks from "./FilterTasks.js";
 
 export default function showHomePage() {
-    window.location.hash = '#home';
+    // window.location.hash = '#home';
     loadTasksFromLocalStorage();
     // localStorage.clear();
     
@@ -18,8 +19,7 @@ export default function showHomePage() {
     buttonNewTask.id = "button-newTask";
     buttonNewTask.innerHTML = "+";
 
-    const orderedTasks = tasks.sort((a, b) => Number(a.status) - Number(b.status));
-    orderedTasks.forEach((task, index) => {task.id = index, new TaskListComponent(task.id)});
+    filterTasks().forEach((task, index) => {task.id = index, new TaskListComponent(task.id)});
     console.log(tasks);
 
     toDoContainer.append(buttonNewTask);

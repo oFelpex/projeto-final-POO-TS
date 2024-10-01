@@ -1,4 +1,4 @@
-import FilterTaskComponent from "./FilterTask.component.js";
+import FilterTaskComponent from "./FilterTaskComponent.component.js";
 export default class HeaderComponent {
     //ADICIONAR HERANÇA, GETTERS E SETTERS
     constructor(location) {
