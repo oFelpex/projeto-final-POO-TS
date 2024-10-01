@@ -17,6 +17,7 @@ export default class TaskDetailsComponent {
         const toDoContainer = document.getElementById("to-do-container");
         if (toDoContainer)
             toDoContainer.innerHTML += this.render();
+        //pega pelo ID, o botão de edição, e adiciona o evento de click, ao clicar a classe EditTaskComponent é iniciada
         const buttonEditTask = document.getElementById("buttonEditTask");
         buttonEditTask.addEventListener("click", () => new EditTaskComponent(this.id));
         (_a = document.getElementById("buttonCancelEditTask")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => showHomePage());
@@ -31,7 +32,6 @@ export default class TaskDetailsComponent {
                 <textarea placeholder="Descrição da sua tarefa" id="inputDescription-details" maxlength="360" disabled>${this.description}</textarea>
                 <p class="paragraph">Data da criação:<br>${taskWeekDay(this.date.getDay())}, dia ${this.date.getDate()} de ${taskMonth(this.date.getMonth() + 1)} de ${this.date.getFullYear()}.<br>A tarefa foi criada às ${this.date.getHours()} horas, ${this.date.getMinutes()} minutos e ${this.date.getSeconds()} segundos.<br>
                 Status da tarefa: ${taksStatus(this.status)}</p>
-                
             </div>
             <div class="buttons-container">
                 <button type="button" id="buttonEditTask" class="buttonNewTask">Editar Tarefa</button>

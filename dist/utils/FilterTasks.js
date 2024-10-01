@@ -1,13 +1,12 @@
-import { Task } from "../models/Task.js";
-import { saveTasksToLocalStorage, tasks } from "../utils/storage.js";
-
-export default function filterTasks(): Task[] {
-    let orderedTasks: Task[] = tasks;
+import { tasks } from "./storage.js";
+export default function filterTasks() {
+    var _a;
+    let orderedTasks = tasks;
     const urlParams = new URLSearchParams(window.location.search);
     const filterType = urlParams.get("filter-type");
-    const searchValue = urlParams.get("search")?.toLowerCase();
-    if(filterType) {
-        switch(filterType) {
+    const searchValue = (_a = urlParams.get("search")) === null || _a === void 0 ? void 0 : _a.toLowerCase();
+    if (filterType) {
+        switch (filterType) {
             case "checked":
                 orderedTasks = tasks.sort((a, b) => Number(b.status) - Number(a.status));
                 break;
@@ -24,10 +23,13 @@ export default function filterTasks(): Task[] {
                 console.log("Opa, algo deu errado aqui, meu fih");
                 break;
         }
-    } else if(searchValue) {
+    }
+    else if (searchValue) {
         orderedTasks = tasks.sort((a, b) => {
-            if (a.name.toLowerCase().includes(searchValue)) return -1;
-            if (b.name.toLowerCase().includes(searchValue)) return 1;
+            if (a.name.toLowerCase().includes(searchValue))
+                return -1;
+            if (b.name.toLowerCase().includes(searchValue))
+                return 1;
             return 0;
         });
     }

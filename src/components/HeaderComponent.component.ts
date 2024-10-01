@@ -5,13 +5,14 @@ type Location = "Lista de Tarefas" | "Filtrar Tarefas" | "Editar Tarefas" | "Cri
 export default class HeaderComponent {
     location: Location;
 
-    //ADICIONAR HERANÇA, GETTERS E SETTERS
+    //ADICIONAR HERANÇA, GETTERS E SETTERS NO FUTURO, talvez...
 
     constructor(location: Location) {
         this.location = location;
         const header = document.getElementById("to-do-container");
         if(header) header.innerHTML = this.render();
 
+        //tive que adicionar um timeout porquê se não, não funciona 
         setTimeout(() => {
             const buttonMenu = document.getElementById("button-menu");
             buttonMenu?.addEventListener("click", () => new FilterTaskComponent);
